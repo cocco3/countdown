@@ -86,24 +86,41 @@ class App extends Component {
         console.log('Error: ' + reason.result.error.message);
       })
 
-      // get events
-      gapi.client.calendar.events.list({
-        'calendarId': 'primary',
-        'showDeleted': false,
-        'singleEvents': true,
-        'orderBy': 'startTime',
-        'q': '#countdown'
-      }).then(function(response) {
-        const events = response.result.items.map(event => {
-          return {
-            date: event.start.dateTime || event.start.date,
-            name: event.summary
-          }
-        }).reverse()
-
-        _this.setState({
-          events: events
+      // fix this: https://developers.google.com/api-client-library/javascript/reference/referencedocs#batch-api-requests
+      gapi.client.calendar.calendarList.list().then(function (response) {
+        const batch = gapi.client.newHttpBatch()
+        
+        response.result.items.forEach(calendar => {
+          const req = gapi.client.request({
+            path: 'https://www.googleapis.com/calendar/v3/calendars/' + calendar.id + '/events',
+            type: 'get',
+            params: {
+              q: '#countdown',
+              timeMin: (new Date()).toISOString()
+            }
+          })
+          batch.add(req)
         })
+
+        batch.execute(function(jsonResponse, rawResponse) {
+          const events = Object.keys(jsonResponse).reduce(function (acc, key) {
+            const resp = jsonResponse[key]
+            if (resp && resp.result && resp.result.items) {
+              const eventsForCalendar = resp.result.items.map(event => {
+                return {
+                  date: event.start.dateTime || event.start.date,
+                  name: event.summary
+                }
+              })
+              acc.push(...eventsForCalendar)
+            }
+            return acc
+          }, []).sort((a, b) => new Date(a.date) - new Date(b.date))
+          
+          _this.setState({
+            events: events
+          })
+        })        
       })
     }
 
