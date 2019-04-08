@@ -5,7 +5,7 @@ import CountList from './components/CountList'
 // import GoogleApi from './utilities/GoogleApi'
 import Header from './components/Header'
 
-const API_KEY = 'AIzaSyDSXHCVzDnIxQ8fzaiGzCOim53iG4S4uSM'
+const API_KEY = 'AIzaSyDgDZXqJtz2xSD8QfJlCGNf-SDI6n3eob0'
 
 const CLIENT_ID = '176181994885-0d0qr7m4ksasjr8hq5uc35fma124pea7.apps.googleusercontent.com'
 
