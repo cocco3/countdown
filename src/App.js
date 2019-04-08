@@ -88,7 +88,7 @@ class App extends Component {
 
       // fix this: https://developers.google.com/api-client-library/javascript/reference/referencedocs#batch-api-requests
       gapi.client.calendar.calendarList.list().then(function (response) {
-        const batch = gapi.client.newHttpBatch()
+        const batch = gapi.client.newBatch()
         
         response.result.items.forEach(calendar => {
           const req = gapi.client.request({
