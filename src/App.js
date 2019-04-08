@@ -19,11 +19,6 @@ const SCOPES = [
   'https://www.googleapis.com/auth/calendar.readonly'
 ].join(' ')
 
-const testData = [
-  { name: 'Kevin and Leigh Visit', date: Date.now() + 9036600},
-  { name: 'Australia', date: Date.now() - 1342234036600}
-]
-
 class App extends Component {
 
   constructor(props) {
@@ -48,7 +43,7 @@ class App extends Component {
     }
 
     const script = document.createElement('script')
-    script.src = 'https://apis.google.com/js/client.js?onload=onLoadGoogleApi'
+    script.src = 'https://apis.google.com/js/api.js?onload=onLoadGoogleApi'
     script.type = 'text/javascript'
     document.body.appendChild(script)
   }
@@ -153,4 +148,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
