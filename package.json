@@ -1,7 +1,7 @@
 {
   "name": "countdown",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://cocco3.github.io/countdown",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "react": "^16.8.6",
@@ -10,10 +10,16 @@
     "timeago.js": "^4.0.0-beta.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cocco3/countdown.git"
   },
   "eslintConfig": {
     "extends": "react-app"
