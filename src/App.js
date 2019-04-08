@@ -86,7 +86,7 @@ class App extends Component {
         console.log('Error: ' + reason.result.error.message);
       })
 
-      // fix this: https://developers.google.com/api-client-library/javascript/reference/referencedocs#batch-api-requests
+      // batch requests to get events across all calendars
       gapi.client.calendar.calendarList.list().then(function (response) {
         const batch = gapi.client.newBatch()
         
