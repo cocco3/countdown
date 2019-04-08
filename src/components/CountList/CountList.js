@@ -26,9 +26,9 @@ function CountList(props) {
           />
         )
       ) : (
-        <div>
+        <p>
           Looks like you don't have any countdowns! Go to <a href="https://calendar.google.com">Google Calendar</a> and update the description for any event with "<code>#countdown</code>".
-        </div>
+        </p>
       )}
     </div>
   )
