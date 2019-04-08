@@ -1,6 +1,7 @@
 {
   "name": "countdown",
   "version": "0.1.0",
+  "description": "Countdown app integrated with Google Calendar.",
   "homepage": "https://cocco3.github.io/countdown",
   "dependencies": {
     "@emotion/core": "^10.0.10",

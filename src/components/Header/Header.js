@@ -24,7 +24,7 @@ function Header(props) {
       <div
         css={css`${styles.HeaderName}`}
       >
-        CountDownApp
+        CountdownApp
       </div>
 
       <div
@@ -33,7 +33,11 @@ function Header(props) {
         {isSignedIn ? (
           <React.Fragment>
             <Avatar name={name} src={photo} />
-            <span>{name}</span>
+            <span
+              css={css`${styles.HeaderUserName}`}
+            >
+              {name}
+            </span>
           </React.Fragment>
         ) : (
           <Button text="Sign In" onClick={onSignInClick} />

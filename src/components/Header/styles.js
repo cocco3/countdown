@@ -12,5 +12,11 @@ export default {
   HeaderUser: {
     alignItems: 'center',
     display: 'flex'
+  },
+  HeaderUserName: {
+    marginLeft: '8px',
+    '@media (max-width: 520px)': {
+      display: 'none'
+    }
   }
 }
