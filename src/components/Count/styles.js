@@ -13,6 +13,7 @@ export default {
   },
   CountDate: {
     display: 'block',
-    fontSize: '1.4rem'
+    fontSize: '1.4rem',
+    lineHeight: '1.4'
   }
 }

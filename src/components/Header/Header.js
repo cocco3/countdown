@@ -5,6 +5,7 @@ import { css, jsx } from '@emotion/core'
 import React from 'react'
 
 import Avatar from '../Avatar'
+import Button from '../Button'
 import styles from './styles'
 
 function Header() {
@@ -12,14 +13,15 @@ function Header() {
     <header
       css={css`${styles.Header}`}
     >
-      <span
+      <div
         css={css`${styles.HeaderName}`}
       >
         CountDown
-      </span>
-      <span>
+      </div>
+      <div>
+        <Button text="Sign In" />
         <Avatar name="Joe Michael Cocco" />
-      </span>
+      </div>
     </header>
   )
 }
