@@ -9,13 +9,15 @@ import styles from './styles'
 
 function Button(props) {
   const {
+    onClick,
     text
   } = props
 
   return (
     <button
-      type="button"
       css={css`${styles.Button}`}
+      onClick={onClick}
+      type="button"
     >
       {text}
     </button>
@@ -23,6 +25,7 @@ function Button(props) {
 }
 
 Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired
 }
 

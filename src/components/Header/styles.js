@@ -4,10 +4,13 @@ export default {
     borderBottom: '1px solid #aaaaaa',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '12px 24px'
+    padding: '16px 24px'
   },
   HeaderName: {
-    fontFamily: 'Menlo',
-    fontSize: '1.8rem'
+    fontSize: '1.8em'
+  },
+  HeaderUser: {
+    alignItems: 'center',
+    display: 'flex'
   }
 }

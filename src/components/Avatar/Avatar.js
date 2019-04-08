@@ -14,14 +14,17 @@ function Avatar(props) {
     src
   } = props
 
-  const initials = Initials(name)
+  const initials = name ? Initials(name) : null
+
+  const imgStyle = src && { backgroundImage: `url(${src})` }
 
   return (
-    <div
+    <span
       css={css`${styles.Avatar}`}
+      style={imgStyle || null}
     >
-      {initials}
-    </div>
+      {imgStyle ? null : initials}
+    </span>
   )
 }
 

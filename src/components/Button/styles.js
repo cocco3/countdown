@@ -2,13 +2,13 @@ export default {
   Button: {
     background: 'transparent',
     border: '2px solid currentColor',
-    borderRadius: '3px',
+    borderRadius: '4px',
     color: '#ffffff',
     cursor: 'pointer',
     display: 'inline-flex',
-    fontSize: '16px',
+    fontSize: 'inherit',
     lineHeight: 'inherit',
-    padding: '8px 12px',
+    padding: '4px 12px',
     textDecoration: 'none',
     transition: 'background-color 0.3s ease 0s',
     '&:hover': {

@@ -1,10 +1,8 @@
 export default {
   Count: {
     display: 'block',
-    fontFamily: 'Menlo',
-    fontSize: '1rem',
-    margin: '1rem 0',
-    padding: '0 24px',
+    fontSize: '1em',
+    margin: '1em 0',
     textAlign: 'start'
   },
   CountName: {
@@ -13,7 +11,6 @@ export default {
   },
   CountDate: {
     display: 'block',
-    fontSize: '1.4rem',
-    lineHeight: '1.4'
+    fontSize: '1.3em'
   }
 }

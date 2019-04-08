@@ -9,6 +9,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  background: aliceblue;
+  border-radius: 3px;
+  color: #282c34;
+  padding: 0 5px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  
+}
+
+a:visited {
+  color: darkturquoise;
 }
