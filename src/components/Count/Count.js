@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { format } from 'timeago.js';
 import PropTypes from 'prop-types'
 
 // eslint-disable-next-line
 import React from 'react'
 
 import styles from './styles'
+import PrettyTimeDiff from '../../utilities/PrettyTimeDiff'
 
 function Count(props) {
   const {
@@ -14,7 +14,7 @@ function Count(props) {
     name
   } = props
 
-  const formattedDate = format(date)
+  const formattedDate = PrettyTimeDiff(date)
 
   return (
     <div
