@@ -8,65 +8,50 @@ const FormatTimeSince = function(timeSince, isAfterNow) {
   const {
     years,
     months,
+    weeks,
     days,
     hours,
     minutes,
     seconds
   } = timeSince
 
-  let final = {}
-
-  if (years) {
-    final = { years, months, days }
-  } else if (months) {
-    final = { months, days, hours }
-  } else if (days) {
-    final = { days, hours, minutes }
-  } else if (hours) {
-    final = { hours, minutes, seconds }
-  } else if (minutes) {
-    final = { minutes, seconds }
-  } else if (seconds) {
-    final = { seconds }
-  }
-
-  return format(final, isAfterNow)
-}
-
-const format = function (final, isAfterNow) {
-  const {
-    years,
-    months,
-    days,
-    hours,
-    minutes,
-    seconds
-  } = final
+  let precision = 3
 
   const parts = []
 
-  if (years) {
+  if (precision && years) {
     parts.push(years + ' year' + addS(years))
+    precision--
   }
 
-  if (months) {
+  if (precision && months) {
     parts.push(months + ' month' + addS(months))
+    precision--
   }
 
-  if (days) {
+  if (precision && weeks) {
+    parts.push(weeks + ' week' + addS(weeks))
+    precision--
+  }
+
+  if (precision && days) {
     parts.push(days + ' day' + addS(days))
+    precision--
   }
 
-  if (hours) {
+  if (precision && hours) {
     parts.push(hours + ' hour' + addS(hours))
+    precision--
   }
 
-  if (minutes) {
+  if (precision && minutes) {
     parts.push(minutes + ' minute' + addS(minutes))
+    precision--
   }
 
-  if (seconds) {
+  if (precision && seconds) {
     parts.push(seconds + ' second' + addS(seconds))
+    precision--
   }
 
   const beginning = isAfterNow ? 'in' : ''

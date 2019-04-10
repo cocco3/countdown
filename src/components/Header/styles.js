@@ -14,7 +14,7 @@ export default {
     display: 'flex'
   },
   HeaderUserName: {
-    marginLeft: '8px',
+    marginLeft: '12px',
     '@media (max-width: 520px)': {
       display: 'none'
     }

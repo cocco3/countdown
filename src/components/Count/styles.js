@@ -1,7 +1,6 @@
 export default {
   Count: {
     display: 'block',
-    fontSize: '1em',
     margin: '1.2em 0',
     textAlign: 'start'
   },
