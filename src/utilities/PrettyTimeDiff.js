@@ -1,4 +1,4 @@
-import FormatTimeSince from "./FormatTimeSince";
+import FormatTimeDiff from "./FormatTimeDiff";
 import GetDatePartsFromMilliseconds from "./GetDatePartsFromMilliseconds";
 
 import differenceInMilliseconds from 'date-fns/difference_in_milliseconds'
@@ -13,7 +13,7 @@ const PrettyTimeDiff = function (isoDate) {
   const dateDiffInMs = Math.abs(differenceInMilliseconds(date, now))
 
   const dateParts = GetDatePartsFromMilliseconds(dateDiffInMs)
-  const formattedTimeDifference = FormatTimeSince(dateParts, isAfterNow)
+  const formattedTimeDifference = FormatTimeDiff(dateParts, isAfterNow)
 
   return formattedTimeDifference
 }

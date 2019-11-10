@@ -3,7 +3,7 @@ function addS(n) {
   return n === 1 ? '' : 's'
 }
 
-const FormatTimeSince = function(timeSince, isAfterNow) {
+const FormatTimeDiff = function(timeSince, isAfterNow, precision = 3) {
   
   const {
     years,
@@ -14,8 +14,6 @@ const FormatTimeSince = function(timeSince, isAfterNow) {
     minutes,
     seconds
   } = timeSince
-
-  let precision = 3
 
   const parts = []
 
@@ -60,4 +58,4 @@ const FormatTimeSince = function(timeSince, isAfterNow) {
   return `${beginning} ${parts.join(', ')} ${ending}`.trim()
 }
 
-export default FormatTimeSince
+export default FormatTimeDiff

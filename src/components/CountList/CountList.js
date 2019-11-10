@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import Count from '../Count'
 import styles from './styles'
 
+import PrettyDaysDiff from '../../utilities/PrettyDaysDiff'
 import PrettyTimeDiff from '../../utilities/PrettyTimeDiff'
 
 function CountList(props) {
@@ -25,7 +26,7 @@ function CountList(props) {
         events.map((countdown, i) => {
 
           const formattedDate = isDays
-            ? PrettyTimeDiff(countdown.date)
+            ? PrettyDaysDiff(countdown.date)
             : PrettyTimeDiff(countdown.date)
 
           return (
