@@ -6,18 +6,17 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import styles from './styles'
-import PrettyTimeDiff from '../../utilities/PrettyTimeDiff'
 
 function Count(props) {
   const {
     date,
-    name
+    name,
+    onClick
   } = props
-
-  const formattedDate = PrettyTimeDiff(date)
 
   return (
     <div
+      onClick={onClick}
       css={css`${styles.Count}`}
     >
       <span
@@ -28,15 +27,20 @@ function Count(props) {
       <span
         css={css`${styles.CountDate}`}
       >
-        {formattedDate}
+        {date}
       </span>
     </div>
   )
 }
 
 Count.propTypes = {
-  date: PropTypes.any.isRequired,
-  name: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func
+}
+
+Count.defaultProps = {
+  onClick: undefined
 }
 
 export default Count
