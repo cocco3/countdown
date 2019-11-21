@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css'
 
 import CountList from './components/CountList'
 // import GoogleApi from './utilities/GoogleApi'
