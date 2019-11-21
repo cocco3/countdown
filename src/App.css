@@ -1,10 +1,8 @@
-/**
- * Scale Typography for Any Screen Size:
- * https://css-tricks.com/books/volume-i/scale-typography-screen-size/
- */
-
 .App {
   background-color: #282c34;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  min-height: stretch;
   color: white;
 }
